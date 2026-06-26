@@ -1,0 +1,24 @@
+{
+  "width": 1200,
+  "height": 900,
+  "cellCount": 400,
+  "seaLevel": 0.45,
+  "mountainScale": 1.2,
+  "noiseOctaves": 5,
+  "latitude": 35,
+  "windDirection": "west",
+  "rivers": { "maxCount": 6, "minLength": 4 },
+  "straits": { "maxWidth": 4 },
+  "countries": [
+    { "name": "Aetheria", "archetype": "island" },
+    { "name": "Valdris", "archetype": "coastal" },
+    { "name": "Kaelmont", "archetype": "peninsular" },
+    { "name": "Sorheim", "archetype": "landlocked" }
+  ],
+  "labels": {
+    "Aetheria": "Republic of Aetheria",
+    "Valdris": "Valdris Confederation",
+    "Kaelmont": "Kingdom of Kaelmont",
+    "Sorheim": "Sorheim Principality"
+  }
+}
