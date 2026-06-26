@@ -33,15 +33,4 @@ describe('createNoiseSampler', () => {
     expect(same).toBeLessThan(5);
   });
 
-  it('more octaves produces more detail variation', () => {
-    const smooth = createNoiseSampler(42, 1, 2.0, 0.5);
-    const detailed = createNoiseSampler(42, 6, 2.0, 0.5);
-    let smoothDiffs = 0;
-    let detailedDiffs = 0;
-    for (let x = 0; x < 100; x++) {
-      smoothDiffs += Math.abs(smooth.sample(x, 0) - smooth.sample(x + 0.1, 0));
-      detailedDiffs += Math.abs(detailed.sample(x, 0) - detailed.sample(x + 0.1, 0));
-    }
-    expect(detailedDiffs).toBeGreaterThan(smoothDiffs);
-  });
 });

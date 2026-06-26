@@ -17,7 +17,7 @@ export function createNoiseSampler(
   function sample(x: number, y: number): number {
     let value = 0;
     let amplitude = 1;
-    let frequency = 0.1;
+    let frequency = 0.01;
     let maxAmplitude = 0;
 
     for (let i = 0; i < octaves; i++) {
