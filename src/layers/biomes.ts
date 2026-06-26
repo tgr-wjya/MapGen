@@ -53,7 +53,7 @@ function computeTemperature(
   latitude: number
 ): number {
   // ponytail: simplified latitude-based temperature
-  const height = 600;
+  const height = Math.max(...grid.cells.map(c => c.site.y));
   const normalizedY = y / height;
   const latitudeEffect = 1 - Math.abs(latitude - 45) / 45;
   const baseTemp = latitudeEffect * (1 - normalizedY * 0.3);
