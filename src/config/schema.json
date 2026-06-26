@@ -3,6 +3,7 @@
   "title": "MapGen Region Config",
   "type": "object",
   "required": ["width", "height", "cellCount", "seaLevel", "countries"],
+  "additionalProperties": false,
   "properties": {
     "width": { "type": "number", "minimum": 200, "maximum": 4000 },
     "height": { "type": "number", "minimum": 200, "maximum": 4000 },
@@ -35,6 +36,7 @@
       "items": {
         "type": "object",
         "required": ["name", "archetype"],
+        "additionalProperties": false,
         "properties": {
           "name": { "type": "string", "minLength": 1 },
           "archetype": { "type": "string", "enum": ["island", "landlocked", "coastal", "peninsular"] }
