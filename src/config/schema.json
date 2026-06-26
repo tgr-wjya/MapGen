@@ -14,6 +14,8 @@
     "windDirection": { "type": "string", "enum": ["west", "east"], "default": "west" },
     "rivers": {
       "type": "object",
+      "required": ["maxCount", "minLength"],
+      "additionalProperties": false,
       "properties": {
         "maxCount": { "type": "number", "minimum": 0, "maximum": 50, "default": 5 },
         "minLength": { "type": "number", "minimum": 2, "maximum": 20, "default": 3 }
@@ -21,6 +23,8 @@
     },
     "straits": {
       "type": "object",
+      "required": ["maxWidth"],
+      "additionalProperties": false,
       "properties": {
         "maxWidth": { "type": "number", "minimum": 1, "maximum": 10, "default": 3 }
       }

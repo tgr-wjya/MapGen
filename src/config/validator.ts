@@ -1,6 +1,6 @@
 import Ajv from 'ajv';
 import schema from './schema.json' with { type: 'json' };
-import { type RegionConfig, DEFAULTS } from './types.js';
+import { type RegionConfig } from './types.js';
 
 type ValidationResult =
   | { valid: true; config: RegionConfig }
@@ -20,20 +20,5 @@ export function validateConfig(input: unknown): ValidationResult {
     return { valid: false, errors };
   }
 
-  const config: RegionConfig = {
-    width: data.width,
-    height: data.height,
-    cellCount: data.cellCount,
-    seaLevel: data.seaLevel,
-    mountainScale: data.mountainScale ?? DEFAULTS.mountainScale!,
-    noiseOctaves: data.noiseOctaves ?? DEFAULTS.noiseOctaves!,
-    latitude: data.latitude ?? DEFAULTS.latitude!,
-    windDirection: data.windDirection ?? DEFAULTS.windDirection!,
-    rivers: data.rivers ?? DEFAULTS.rivers!,
-    straits: data.straits ?? DEFAULTS.straits!,
-    countries: data.countries,
-    labels: data.labels ?? DEFAULTS.labels!,
-  };
-
-  return { valid: true, config };
+  return { valid: true, config: data as RegionConfig };
 }
